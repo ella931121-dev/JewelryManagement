@@ -1,0 +1,80 @@
+@model JewelryManagement.Models.Product
+
+@{
+    ViewData["Title"] = "飾品詳細資料";
+}
+
+<div class="container mt-4">
+
+    <h2 class="text-center mb-4"
+        style="color:#9C7183; font-weight:bold;">
+        飾品商品詳細資料
+    </h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+
+            <div class="card shadow-sm"
+                 style="border:1px solid #E8D5DC;">
+
+                <div class="card-header text-center"
+                     style="background-color:#F5E8ED; color:#9C7183;">
+                    商品資訊
+                </div>
+
+                <div class="card-body p-4">
+
+                    <dl class="row">
+
+                        <dt class="col-sm-4">商品名稱</dt>
+                        <dd class="col-sm-8">
+                            @Model.ProductName
+                        </dd>
+
+                        <dt class="col-sm-4">商品分類</dt>
+                        <dd class="col-sm-8">
+                            @Model.Category
+                        </dd>
+
+                        <dt class="col-sm-4">商品價格</dt>
+                        <dd class="col-sm-8">
+                            NT$ @Model.Price.ToString("N0")
+                        </dd>
+
+                        <dt class="col-sm-4">庫存數量</dt>
+                        <dd class="col-sm-8">
+                            @Model.Stock
+                        </dd>
+
+                        <dt class="col-sm-4">商品描述</dt>
+                        <dd class="col-sm-8">
+                            @Model.Description
+                        </dd>
+
+                    </dl>
+
+                    <hr />
+
+                    <div class="d-flex gap-2">
+
+                        <a asp-action="Edit"
+                           asp-route-id="@Model.Id"
+                           class="btn text-white"
+                           style="background-color:#B98598;">
+                            修改商品
+                        </a>
+
+                        <a asp-action="Index"
+                           class="btn btn-outline-secondary">
+                            返回商品列表
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

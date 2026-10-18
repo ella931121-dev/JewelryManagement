@@ -1,0 +1,17 @@
+
+# Visual Studio 暫存檔
+.vs/
+**/bin/
+**/obj/
+
+# SQLite 資料庫
+*.db
+*.db-shm
+*.db-wal
+
+# Visual Studio 使用者設定
+*.user
+*.suo
+
+# 本機開發環境設定
+appsettings.Development.json

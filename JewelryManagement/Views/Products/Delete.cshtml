@@ -1,0 +1,89 @@
+@model JewelryManagement.Models.Product
+
+@{
+    ViewData["Title"] = "刪除飾品";
+}
+
+<div class="container mt-4">
+
+    <h2 class="text-center mb-4"
+        style="color:#9C7183; font-weight:bold;">
+        刪除飾品商品
+    </h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+
+            <div class="card shadow-sm"
+                 style="border:1px solid #E8D5DC;">
+
+                <div class="card-header text-center"
+                     style="background-color:#F5E8ED; color:#9C7183;">
+                    刪除商品確認
+                </div>
+
+                <div class="card-body p-4">
+
+                    <div class="alert alert-warning">
+                        確定要刪除這筆飾品商品嗎？
+                        刪除後將無法復原！
+                    </div>
+
+                    <dl class="row">
+
+                        <dt class="col-sm-4">商品名稱</dt>
+                        <dd class="col-sm-8">
+                            @Model.ProductName
+                        </dd>
+
+                        <dt class="col-sm-4">商品分類</dt>
+                        <dd class="col-sm-8">
+                            @Model.Category
+                        </dd>
+
+                        <dt class="col-sm-4">商品價格</dt>
+                        <dd class="col-sm-8">
+                            NT$ @Model.Price.ToString("N0")
+                        </dd>
+
+                        <dt class="col-sm-4">庫存數量</dt>
+                        <dd class="col-sm-8">
+                            @Model.Stock
+                        </dd>
+
+                        <dt class="col-sm-4">商品描述</dt>
+                        <dd class="col-sm-8">
+                            @Model.Description
+                        </dd>
+
+                    </dl>
+
+                    <hr />
+
+                    <form asp-action="Delete" method="post">
+
+                        <input type="hidden" asp-for="Id" />
+
+                        <div class="d-flex gap-2">
+
+                            <button type="submit"
+                                    class="btn btn-danger">
+                                確認刪除
+                            </button>
+
+                            <a asp-action="Index"
+                               class="btn btn-outline-secondary">
+                                取消並返回列表
+                            </a>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

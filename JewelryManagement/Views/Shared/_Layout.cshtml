@@ -1,0 +1,113 @@
+﻿
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - 飾品銷售網站管理系統</title>
+
+    <link rel="stylesheet"
+          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet"
+          href="~/css/site.css"
+          asp-append-version="true" />
+
+    <style>
+        body {
+            background-color: #FFFAFB;
+        }
+
+        .jewelry-navbar {
+            background-color: #F5E8ED;
+            border-bottom: 1px solid #E8D5DC;
+        }
+
+        .jewelry-brand {
+            color: #9C7183 !important;
+            font-weight: bold;
+        }
+
+        .jewelry-link {
+            color: #775F68 !important;
+        }
+
+        .jewelry-link:hover {
+            color: #B98598 !important;
+        }
+
+        .jewelry-footer {
+            color: #9C7183;
+            border-top: 1px solid #E8D5DC;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm jewelry-navbar mb-4">
+            <div class="container">
+
+                <a class="navbar-brand jewelry-brand"
+                   asp-controller="Products"
+                   asp-action="Index">
+                    ♡ 飾品銷售網站管理系統
+                </a>
+
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="切換導覽列">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link jewelry-link"
+                               asp-controller="Products"
+                               asp-action="Index">
+                                商品列表
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link jewelry-link"
+                               asp-controller="Products"
+                               asp-action="Create">
+                                新增飾品
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer jewelry-footer">
+        <div class="container">
+            &copy; 2026 - Jewelry Management System
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js"
+            asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
