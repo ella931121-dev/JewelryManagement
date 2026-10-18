@@ -361,3 +361,10 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+# JewelryManagement SQLite Database
+*.db
+*.db-shm
+*.db-wal
+
+# Local development settings
+appsettings.Development.json
